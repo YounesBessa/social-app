@@ -1,4 +1,4 @@
-import React, { useEffect,useContext } from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
 import LottieView from "lottie-react-native";
 
@@ -7,7 +7,7 @@ import {UserContext} from "../context/UserContext";
 import Text from "../components/Text";
 
 export default LoadingScreen = () => {
-  const [_, setUser] = useContext(UserContext);
+  const [_, setUser] = React.useContext(UserContext);
   useEffect(() => {
     setTimeout(async () => {
       setUser(state => ({...state, isLoggedIn: false}));
@@ -20,7 +20,7 @@ export default LoadingScreen = () => {
       </Text>
 
       <LottieView
-        source={require("../../assets/loading.json")}
+        source={require("../assets/loading.json")}
         autoPlay
         loop
         style={{ width: "100%" }}

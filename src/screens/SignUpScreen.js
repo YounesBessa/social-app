@@ -1,10 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import Platform from "react-native";
 import styled from "styled-components";
 import { AntDesign } from "@expo/vector-icons";
 import * as Permissions from "expo-permissions";
 import * as ImagePicker from "expo-image-picker";
 
+import { FirebaseContext } from "../context/FirebaseContext";
 import { UserContext } from "../context/UserContext";
 
 import Text from "../components/Text";
@@ -15,6 +16,7 @@ export default SignUpScreen = ({ navigation }) => {
   const [password, setPassword] = useState();
   const [loading, setLoading] = useState(false);
   const [profilePhoto, setProfilePhoto] = useState();
+  const firebase = useContext(FirebaseContext);
   const [_, setUser] = useContext(UserContext);
 
   const getPermission = async () => {
@@ -179,7 +181,7 @@ const ProfilePhoto = styled.Image`
 `;
 
 const Auth = styled.View`
-  margin: 16px 32px 32px;
+  margin-top: 16px 32px 32px;
 `;
 
 const AuthContainer = styled.View`

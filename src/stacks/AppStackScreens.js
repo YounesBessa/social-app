@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import { UserContext } from "../context/UserContext";
 
-import AuthStackScreens from "./AuthStackScreens";
-import MainStackScreens from "./MainStackScreens";
+import AuthStackScreens from "../screens/AuthStackScreens";
+import MainStackScreens from "../screens/MainStackScreens";
 import LoadingScreen from "../screens/LoadingScreen";
 
 export default AppStackScreens = () => {
